@@ -47,35 +47,20 @@ public void actionPerformed(ActionEvent ae)
 {
 MainFrame a = new MainFrame();
 dispose();
-session.close();
 }
 });
 btnSave.addActionListener(new ActionListener(){
 public void actionPerformed(ActionEvent ae)
 {
-Transaction t =null;                                          //put this in save 
+Transaction t =null;                                          
 try
 {
-//System.out.println("begin");
 t =session.beginTransaction();
 int id = Integer.parseInt(txtId.getText());
 Employee em = (Employee)session.get(Employee.class ,id);
 if(em!=null)
 {
 String name= txtName.getText();
-/*try
-{
-if(name.matches(".*\\d+.*"))
-throw new NullPointerException();
-}
-catch(NullPointerException npe)
-{
-t.rollback();
-JOptionPane.showMessageDialog(new JDialog(),"Enter alphabets only");
-txtName.requestFocus();
-txtName.setName("");
-}
-*/
 try
 {
 salary = Double.parseDouble(txtSalary.getText());
@@ -123,7 +108,6 @@ JOptionPane.showMessageDialog(c,"Record does not exist");
 txtId.setText("");
 txtId.requestFocus();
 }
-//System.out.println("end");
 }
 catch(NumberFormatException nfe)
 {
@@ -143,7 +127,7 @@ txtId.requestFocus();
 }
 finally
 {
-//session.close();
+session.close();
 }
 int id =Integer.parseInt(txtId.getText());
 String name=txtName.getText();

@@ -49,7 +49,7 @@ public void actionPerformed(ActionEvent ae)
 {
 MainFrame a = new MainFrame();
 dispose();
-session.close();
+
 }
 });
 btnSave.addActionListener(new ActionListener(){
@@ -64,19 +64,6 @@ int id =Integer.parseInt(txtId.getText());
 
 
 name= txtName.getText();
-/*try
-{
-if(name.matches(".*\\d+.*"))
-throw new NullPointerException();
-}
-catch(NullPointerException npe)
-{
-t.rollback();
-JOptionPane.showMessageDialog(new JDialog(),"Enter alphabets only");
-txtName.requestFocus();
-txtName.setName("");
-}
-*/
 try
 {
 salary = Double.parseDouble(txtSalary.getText());
@@ -122,8 +109,6 @@ txtId.setText("");
 txtName.setText("");
 txtSalary.setText("");
 txtId.requestFocus();
-//session.close();
-
 }
 }
 catch(NumberFormatException e)
@@ -133,13 +118,6 @@ JOptionPane.showMessageDialog(c,"Characters are not allowed in ID");
 txtId.requestFocus();
 txtId.setText("");
 }
-/*catch(HibernateException he)
-{
-JOptionPane.showMessageDialog(c,"Hibernate Exception");
-txtId.setText("");
-txtId.requestFocus();
-}
-*/
 catch(Exception sc)
 {
 t.rollback();
@@ -147,7 +125,7 @@ JOptionPane.showMessageDialog(c,sc);
 }
 finally
 {
-//session.close();
+session.close();
 }
 int id =Integer.parseInt(txtId.getText());
 String name=txtName.getText();

@@ -28,11 +28,10 @@ java.util.List<Employee> stu = new ArrayList<>();
 stu = session.createQuery("from Employee").list();
 for (Employee em : stu)
 	 ta.append("id:"+em.getId() +" N:" +em.getName()+" S:"+em.getSalary()+" $"+"\n");
-//System.out.println("end");
 }
 catch(Exception e)
 {
-System.out.println(e);
+JOptionPane.showMessageDialog(c,e);
 }
 finally
 {

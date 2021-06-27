@@ -37,7 +37,6 @@ public void actionPerformed(ActionEvent ae)
 {
 MainFrame a = new MainFrame();
 dispose();
-session.close();
 }
 });
 btnSave.addActionListener(new ActionListener(){
@@ -88,7 +87,7 @@ JOptionPane.showMessageDialog(c,ee);
 }
 finally
 {
-//session.close();
+session.close();
 }
 id =Integer.parseInt(txtId.getText());
 }
