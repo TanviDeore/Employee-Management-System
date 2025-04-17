@@ -42,3 +42,6 @@ A Java-based desktop application for managing employee records using CRUD operat
 
 5. Run the application
     Execute MainFrame.java to start the GUI.
+
+Notes
+    Avoid committing .class files to version control.
