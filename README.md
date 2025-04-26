@@ -16,7 +16,7 @@ A Java-based desktop application for managing employee records using CRUD operat
 - Java
 - Java Swing (GUI)
 - Hibernate (ORM)
-- MySQL (or other JDBC-compatible DB)
+- MySQL 
 
 ## Project Structure
 
